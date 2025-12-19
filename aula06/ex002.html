@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeiro programa</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: lightblue;
+            color: white;
+            font: bold 1em Arial;
+        }
+
+        h1 { 
+            color: yellow;
+        }
+
+    </style>
 </head>
 <body>
     <main>
@@ -15,9 +26,8 @@
     </main>
 
     <script>
-        window.alert("Mensagem de bandido!")
-        window.confirm("Está gostando de JS?") // Janela com botão ok e cancelar
-        window.prompt("Qual é seu nome?") // Vai perguntar o nome...
+        let nome = window.prompt("Qual é seu nome?")
+        window.alert("É um grande prazer em te conhecer, " + nome + "!") // + é concatenação
     </script>
 </body>
 </html>
