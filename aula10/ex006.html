@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="area">
         <p>Interaja...</p>
     </div>
 
@@ -30,6 +30,11 @@
     <script>
         let a = window.document.querySelector("div#area")
 
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+            
         function clicar() {
             a.innerHTML = "Clicou!"
             a.style.background = "red"
