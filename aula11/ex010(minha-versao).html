@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <fieldset>
+        <legend>Velocidade</legend>
+            <label for="vel">Velocidade:</label>
+            <input type="number" name="vel" id="vel" required placeholder="Km/h" min="1" max="100" size="100">
+            <br>
+            <button id="enviar">Verificar</button>
+    </form>
+</fieldset>
+    <p id="resultado"></p>
+
+<script>
+    let clickou = window.document.querySelector("#enviar")
+    clickou.addEventListener("click", velocidade)
+    
+    function velocidade() {
+        let val = window.document.querySelector("#vel").value
+        let valnum = Number(val)
+
+        let resultado = window.document.querySelector("p#resultado")
+        resultado.innerHTML = `Sua velocidade é ${valnum}Km/h` 
+    }
+
+</script>
+</body>
+</html>
