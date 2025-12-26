@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas</title>
+</head>
+<body>
+    <main>
+        <h1>País de Residência</h1>
+        <label for="txtval">País de Residência: </label>
+        <input type="text" name="txtval" id="txtval" required placeholder="Escreva seu País">
+        <input type="button" value="Enviar" id="botao">
+    </main>
+    <div id="res">
+
+    </div>
+
+    <script>
+        let botao = window.document.querySelector("#botao")
+        botao.addEventListener("click", pais)
+
+        function pais(){
+            let txtval = window.document.querySelector("#txtval")
+            let original = txtval.value //pegamos o resultado da variavel, e guardamos o resultado original, para exibir mais tarde no "res"
+            let valconv = original.trim().toUpperCase() //trim retira os espaços, e deixamos tudo maiusculo para la nas condições, podermos generalizar, pq se o usuario digitasse BRASIL ou bRaSiL o resultado seria diferente, mas transformando tudo em letra MAIUSCULA o resultado sempre será igual.
+            let res = window.document.querySelector("div#res")
+
+            if(valconv !== "BRASIL"){
+                res.innerHTML = `Seu país é ${original}, portanto você é Estrangeiro!`
+            } else {
+                res.innerHTML = `Seu país é ${original}, portanto você é Brasileiro!`
+            }
+        }
+    </script>
+</body>
+</html>
