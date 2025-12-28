@@ -18,6 +18,28 @@ section {
     box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.233);
 }
 
+div#nascimento {
+    margin: 10px 0px;
+}
+
+div#sexo {
+    margin-bottom: 10px;
+}
+
+#res {
+    text-align: center;
+}
+
+#res p {
+    display: block;
+}
+
+img#foto {
+    width: 250px;
+    border-radius: 50%;
+
+}
+
 footer {
     text-align: center;
     color: white;
