@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu exercicio</title>
+    <style>
+        #coringa {
+            height: 100%;
+            width: 100%;
+            max-width: 300px;
+            max-height: 300px;
+            border: 5px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            outline: 5px solid rgb(139, 0, 109);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Dia da Semana</h1>
+        <p id="res"></p>
+    </main>
+
+    <script>
+        let data = new Date()
+        let dia = data.getDay()
+        let res = window.document.querySelector("#res")
+        
+        switch(dia) {
+            case 0:
+                res.innerHTML = "Hoje é <strong><a href='https://datadehoje.com/' target='_blank'>Domingo!</a></strong>"
+                break
+            case 1:
+                res.innerHTML = "Hoje é <strong><a href='https://datadehoje.com/' target='_blank'>Segunda-feira!</a></strong>"
+                break
+            case 2:
+                res.innerHTML = "Hoje é <strong><a href='https://datadehoje.com/' target='_blank'>Terça-feira!</a></strong>"
+                break
+            case 3:
+                res.innerHTML = "Hoje é <strong><a href='https://datadehoje.com/' target='_blank'>Quarta-feira!</a></strong>"
+                break
+            case 4:
+                res.innerHTML = "Hoje é <strong><a href='https://datadehoje.com/' target='_blank'>Quinta-feira!</a></strong>"
+                break
+            case 5:
+                res.innerHTML = "Hoje é <strong><a href='https://datadehoje.com/' target='_blank'>Sexta-feira!</a></strong>"
+                break
+            case 6:
+                res.innerHTML = "Hoje é <strong><a href='https://datadehoje.com/' target='_blank'>Sabado!</a></strong>"
+                break
+        }
+        let titulo = window.document.createElement("h1")
+        titulo.innerHTML = "tudo aqui é apenas um teste"
+        document.querySelector("main").appendChild(titulo)
+
+        let img = document.createElement("img")
+        img.setAttribute("id", "coringa")
+        img.setAttribute("src", "coringa.jpg")
+        document.querySelector("main").appendChild(img)
+
+        document.querySelector("main").style.textAlign = "center"
+    </script>
+</body>
+</html>
