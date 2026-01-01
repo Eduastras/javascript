@@ -18,6 +18,10 @@ section {
     box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.233);
 }
 
+div#res {
+    font-size: 1.3em;
+}
+
 footer {
     text-align: center;
     color: white;
