@@ -26,12 +26,11 @@ function contar() {
                 res.innerHTML += `${i} \u{1F449}`
             }
         // ordem decrescente
-        } else if (inicio > fim) {
+        } else {
             for(let i = inicio; i >= fim; i -= p) {
                 res.innerHTML += `${i} \u{1F449}`
             }
-        }
-        
+        }        
         res.innerHTML += `\u{1F3C1}`
     }
 
