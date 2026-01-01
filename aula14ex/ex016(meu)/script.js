@@ -8,40 +8,31 @@ let res = window.document.querySelector("div#res p")
 botao.addEventListener("click", contar)
 
 function contar() {
-    let inicio = Number(num1.value)
-    let fim = Number(num2.value)
-    let p = Number(passo.value)
     
-    if (inicio === 0 || fim === 0) {
+    if (num1.value.length == 0 || num2.value.length == 0) {
         res.innerHTML = "Impossível contar, revise os <strong>dados!</strong>"
-    } else if (p <= 0 && inicio > fim) {
-        window.alert("Passo invalido, considerando (passo = 1)")
-        p = 1
-        res.innerHTML = "Contando: <br>"
-        for(let i = inicio; i >= fim; i -= p) {
-            res.innerHTML += `${i} 👉`
-        }
-        res.innerHTML += "🏁"
-    } else if (p <= 0 && inicio < fim) {
-        window.alert("Passo invalido, considerando (passo = 1)")
-        p = 1
-        res.innerHTML = "Contando: <br>"
-        for(let i = inicio; i <= fim; i += p) {
-            res.innerHTML += `${i} 👉`
-        }
-        res.innerHTML += "🏁"
-    } else if (inicio > fim) {
-        res.innerHTML = "Contando: <br>"
-        for(let i = inicio; i >= fim; i -= p) {
-            res.innerHTML += `${i} 👉`
-        }
-        res.innerHTML += "🏁"
     } else {
+        let inicio = Number(num1.value)
+        let fim = Number(num2.value)
+        let p = Number(passo.value)
         res.innerHTML = "Contando: <br>"
-        for(let i = inicio; i <= fim; i += p) {
-            res.innerHTML += `${i} 👉`
+        if (p <= 0) {
+            window.alert("Passo inválido, considerando passo = 1")
+            p = 1
         }
-        res.innerHTML += "🏁"
+        // ordem crescente
+        if (inicio < fim) {
+            for(let i = inicio; i <= fim; i += p) {
+                res.innerHTML += `${i} \u{1F449}`
+            }
+        // ordem decrescente
+        } else if (inicio > fim) {
+            for(let i = inicio; i >= fim; i -= p) {
+                res.innerHTML += `${i} \u{1F449}`
+            }
+        }
+        
+        res.innerHTML += `\u{1F3C1}`
     }
 
 }
