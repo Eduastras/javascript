@@ -14,7 +14,15 @@ function contar() {
     
     if (inicio === 0 || fim === 0) {
         res.innerHTML = "Impossível contar, revise os <strong>dados!</strong>"
-    } else if (p <= 0) {
+    } else if (p <= 0 && inicio > fim) {
+        window.alert("Passo invalido, considerando (passo = 1)")
+        p = 1
+        res.innerHTML = "Contando: <br>"
+        for(let i = inicio; i >= fim; i -= p) {
+            res.innerHTML += `${i} 👉`
+        }
+        res.innerHTML += "🏁"
+    } else if (p <= 0 && inicio < fim) {
         window.alert("Passo invalido, considerando (passo = 1)")
         p = 1
         res.innerHTML = "Contando: <br>"
