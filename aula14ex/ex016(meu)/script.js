@@ -22,6 +22,12 @@ function contar() {
             res.innerHTML += `${i} 👉`
         }
         res.innerHTML += "🏁"
+    } else if (inicio > fim) {
+        res.innerHTML = "Contando: <br>"
+        for(let i = inicio; i >= fim; i -= p) {
+            res.innerHTML += `${i} 👉`
+        }
+        res.innerHTML += "🏁"
     } else {
         res.innerHTML = "Contando: <br>"
         for(let i = inicio; i <= fim; i += p) {
